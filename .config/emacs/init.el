@@ -169,5 +169,8 @@
 (setq org-directory "~/org-files")
 (setq org-agenda-files '("tickets.org" "todo.org" "curriculum.org"))
 
+(use-package cider
+  :ensure t)
+
 ;; TODO Add company, cider, clojure mode for babashka, org-mode, org-bullets
 ;; set org-agenda files 
