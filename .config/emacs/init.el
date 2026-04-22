@@ -149,6 +149,8 @@
 (use-package paredit
   :hook ((clojure-mode emacs-lisp-mode) . paredit-mode))
 
+(add-to-list 'auto-mode-alist '("\\.bb\\'" . clojure-mode))
+
 ;; Org Mode
 (defun dw/org-mode-setup ()
   (org-indent-mode)
