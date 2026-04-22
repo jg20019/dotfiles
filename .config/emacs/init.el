@@ -148,5 +148,23 @@
 ;; UI
 (use-package paredit)
 
+;; Org Mode
+(defun dw/org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (auto-fill-mode 0)
+  (visual-line-mode 1)
+  (keymap-set org-mode-map "C-c a" 'org-agenda-list)
+  (setq evil-auto-indent nil))
+
+(use-package org
+  :hook (org-mode . dw/org-mode-setup)
+  :config
+  (setq org-ellipsis " ▾"
+        org-hide-emphasis-markers t))
+
+(setq org-directory "~/org-files")
+(setq org-agenda-files '("tickets.org" "todo.org" "curriculum.org"))
+
 ;; TODO Add company, cider, clojure mode for babashka, org-mode, org-bullets
 ;; set org-agenda files 
