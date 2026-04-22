@@ -146,7 +146,8 @@
   "ts" '(hydra-text-scale/body :which-key "scale text"))
 
 ;; UI
-(use-package paredit)
+(use-package paredit
+  :hook ((clojure-mode emacs-lisp-mode) . paredit-mode))
 
 ;; Org Mode
 (defun dw/org-mode-setup ()
