@@ -172,5 +172,7 @@
 (use-package cider
   :ensure t)
 
-;; TODO Add company, cider, clojure mode for babashka, org-mode, org-bullets
-;; set org-agenda files 
+(use-package company
+  :hook ((cider-mode cider-repl-mode) . company-mode))
+
+;; TODO Add company, cider, org-mode, org-bullets
