@@ -86,8 +86,9 @@
 (load-theme 'modus-vivendi t)
 
 ;; Make background transparent
-(set-frame-parameter nil 'alpha-background 85)
-(add-to-list 'default-frame-alist '(alpha-background . 85))
+(set-frame-parameter nil 'alpha-background 70)
+
+(add-to-list 'default-frame-alist '(alpha-background . 70))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
