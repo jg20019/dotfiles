@@ -165,14 +165,28 @@
   (keymap-set org-mode-map "C-c a" 'org-agenda-list)
   (setq evil-auto-indent nil))
 
+(setq org-hide-emphasis-markers t)
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
 (use-package org
   :hook (org-mode . dw/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"
         org-hide-emphasis-markers t))
 
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; This removes the bullets which I think looks nicer
+(setq org-bullets-bullet-list '(" "))
+
 (setq org-directory "~/org-files")
 (setq org-agenda-files '("tickets.org" "todo.org" "curriculum.org"))
+(setq org-tag-alist '(("howto"  . ?h)
+		      ("urgent" . ?u)))
 
 (use-package cider
   :ensure t)
@@ -180,4 +194,3 @@
 (use-package company
   :hook ((cider-mode cider-repl-mode) . company-mode))
 
-;; TODO Add company, cider, org-mode, org-bullets
