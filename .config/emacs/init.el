@@ -194,3 +194,7 @@
 (use-package company
   :hook ((cider-mode cider-repl-mode) . company-mode))
 
+(use-package projectile
+  :config (projectile-mode 1)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
