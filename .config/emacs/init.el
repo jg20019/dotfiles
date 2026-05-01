@@ -162,7 +162,7 @@
   (variable-pitch-mode 1)
   (auto-fill-mode 0)
   (visual-line-mode 1)
-  (keymap-set org-mode-map "C-c a" 'org-agenda-list)
+  (keymap-set org-mode-map "C-c a" 'org-agenda)
   (setq evil-auto-indent nil))
 
 (setq org-hide-emphasis-markers t)
