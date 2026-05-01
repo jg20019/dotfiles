@@ -101,7 +101,6 @@
 
 ;; Keybindings
 
-
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -151,6 +150,7 @@
   "ts" '(hydra-text-scale/body :which-key "scale text"))
 
 ;; UI
+
 (use-package paredit
   :hook ((clojure-mode emacs-lisp-mode) . paredit-mode))
 
