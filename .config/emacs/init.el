@@ -164,6 +164,7 @@
   (auto-fill-mode 0)
   (visual-line-mode 1)
   (keymap-set org-mode-map "C-c a" 'org-agenda)
+  (keymap-set org-mode-map "C-c l" 'org-store-link)
   (setq evil-auto-indent nil))
 
 (setq org-hide-emphasis-markers t)
