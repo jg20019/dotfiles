@@ -186,8 +186,6 @@
 (setq org-directory "~/org-files")
 (setq org-agenda-files '("development.org" "personal.org" "tickets.org" "todo.org" "meetings.org"))
 
-(setq org-tag-alist '(("howto"  . ?h)
-		      ("urgent" . ?u)))
 ;; Allow refiling to org-agenda-files
 (setq org-refile-targets  '((org-agenda-files  . (:level . 1))))
 
@@ -197,6 +195,11 @@
 
 ;; Allow creating at top level
 (setq org-refile-allow-creating-parent-nodes 'confirm)
+
+;; Tags that can be used to filter agenda views
+(setq org-tag-alist '(("howto"   . ?h)
+		      ("meeting" . ?m)
+		      ("urgent"  . ?u)))
 
 (use-package cider
   :ensure t)
