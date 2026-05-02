@@ -188,6 +188,15 @@
 
 (setq org-tag-alist '(("howto"  . ?h)
 		      ("urgent" . ?u)))
+;; Allow refiling to org-agenda-files
+(setq org-refile-targets  '((org-agenda-files  . (:level . 1))))
+
+;; Allow refiling to toplevel instead of needing to choose a
+;; top-level heading to file it under
+(setq org-refile-use-outline-path 'file)
+
+;; Allow creating at top level
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 (use-package cider
   :ensure t)
