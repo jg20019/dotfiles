@@ -184,7 +184,7 @@
 (setq org-bullets-bullet-list '(" "))
 
 (setq org-directory "~/org-files")
-(setq org-agenda-files '("tickets.org" "todo.org"))
+(setq org-agenda-files '("development.org" "personal.org" "tickets.org" "todo.org" "meetings.org"))
 
 (setq org-tag-alist '(("howto"  . ?h)
 		      ("urgent" . ?u)))
