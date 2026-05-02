@@ -160,7 +160,6 @@
 ;; Org Mode
 (defun dw/org-mode-setup ()
   (org-indent-mode)
-  (variable-pitch-mode 1)
   (auto-fill-mode 0)
   (visual-line-mode 1)
   (keymap-set org-mode-map "C-c a" 'org-agenda)
@@ -202,6 +201,48 @@
 (setq org-tag-alist '(("howto"   . ?h)
 		      ("meeting" . ?m)
 		      ("urgent"  . ?u)))
+
+;; Customizing the look of org-mode based on
+;; https://zzamboni.org/post/beautifying-org-mode-in-emacs/
+;; I like how documents look, but not todo items but it
+;; will work for now. 
+(let* ((variable-tuple
+        (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
+              ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+              (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+       (base-font-color     (face-foreground 'default nil 'default))
+       (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+
+  (custom-theme-set-faces
+   'user
+   `(org-level-8 ((t (,@headline ,@variable-tuple))))
+   `(org-level-7 ((t (,@headline ,@variable-tuple))))
+   `(org-level-6 ((t (,@headline ,@variable-tuple))))
+   `(org-level-5 ((t (,@headline ,@variable-tuple))))
+   `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
+   `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
+   `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
+   `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
+   `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+
+(custom-theme-set-faces
+ 'user
+ '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
+ '(fixed-pitch ((t ( :family "JetBrainsMonoNL Nerd Font" :height 160)))))
+  (custom-theme-set-faces
+   'user
+   '(org-block ((t (:inherit fixed-pitch))))
+   '(org-code ((t (:inherit (shadow fixed-pitch)))))
+   '(org-document-info ((t (:foreground "dark orange"))))
+   '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+   '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+   '(org-link ((t (:foreground "royal blue" :underline t))))
+   '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+   '(org-property-value ((t (:inherit fixed-pitch))) t)
+   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+   '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+   '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+   '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 
 (use-package cider
   :ensure t)
