@@ -258,3 +258,5 @@
 
 ;; Zig
 (use-package zig-mode)
+
+(use-package lsp-mode)
