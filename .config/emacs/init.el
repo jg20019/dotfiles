@@ -248,7 +248,7 @@
   :ensure t)
 
 (use-package company
-  :hook ((cider-mode cider-repl-mode) . company-mode))
+  :hook ((cider-mode cider-repl-mode zig-mode) . company-mode))
 
 (use-package projectile
   :config (projectile-mode 1)
@@ -259,6 +259,8 @@
 ;; Zig
 (use-package zig-mode)
 
-(use-package lsp-mode)
+(use-package lsp-mode
+  :hook ((zig-mode) . lsp-mode))
+
 (setq lsp-zig-zls-executable "/usr/local/bin/zls")
 (setq lsp-zig-zig-exe-path "/home/linuxbrew/.linuxbrew/bin/zig")
