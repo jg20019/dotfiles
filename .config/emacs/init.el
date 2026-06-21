@@ -181,9 +181,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; This removes the bullets which I think looks nicer
-(setq org-bullets-bullet-list '(" "))
-
 (setq org-directory "~/org-files")
 (setq org-agenda-files '("development.org" "personal.org" "tickets.org" "todo.org" "meetings.org"))
 
