@@ -189,3 +189,6 @@ bar { }
 
 # Use polybar instead of i3bar
 exec_always ~/.config/polybar/launch.sh
+
+# Set desktop background
+exec_always feh --bg-fill /usr/share/backgrounds/Little_numbat_boy_by_azskalt.png
