@@ -219,3 +219,7 @@
 
 (setq lsp-zig-zls-executable "/usr/local/bin/zls")
 (setq lsp-zig-zig-exe-path "/home/linuxbrew/.linuxbrew/bin/zig")
+
+;; Add clj to exec path
+(push "/home/linuxbrew/.linuxbrew/bin" exec-path)
+
