@@ -223,3 +223,5 @@
 ;; Add clj to exec path
 (push "/home/linuxbrew/.linuxbrew/bin" exec-path)
 
+;; Add shadowcljs to exec path
+(push "/home/jgibson/.local/share/mise/installs/node/18.20.6/bin/" exec-path)
