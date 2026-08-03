@@ -225,3 +225,6 @@
 
 ;; Add shadowcljs to exec path
 (push "/home/jgibson/.local/share/mise/installs/node/18.20.6/bin/" exec-path)
+
+(use-package mise
+  :hook ((after-init) . global-mise-mode))
