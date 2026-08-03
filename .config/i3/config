@@ -181,6 +181,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Screenshots
+bindsym Shift+Print exec --no-startup-id maim --select "/home/jgibson/Pictures/Screenshots/Screenshot from $(date +"%F %H-%M-%S").png"
+
 gaps inner 10px
 gaps outer 6px
 
