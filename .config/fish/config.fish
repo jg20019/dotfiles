@@ -6,12 +6,10 @@ if status is-interactive
     abbr --add dc docker compose
 
     set -Ux EDITOR nvim
-    fish_add_path /home/jgibson/bin/
-    fish_add_path /home/jgibson/bin/perlego/
-    fish_add_path /home/jgibson/.qlot/bin
-    fish_add_path /home/linuxbrew/.linuxbrew/bin/
-    fish_add_path /usr/local/bin/intellij/bin
-    fish_add_path /usr/local/go/bin
+    fish_add_path -P /home/jgibson/bin/
+    fish_add_path -P /home/linuxbrew/.linuxbrew/bin/
+    fish_add_path -P /usr/local/bin/intellij/bin
+    fish_add_path -P /usr/local/go/bin
     # Change JAVA home based on the project
     set -gx JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
     #set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
